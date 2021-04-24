@@ -1,19 +1,15 @@
 // import express 
-const express = require('express');
-const app = express();
-const cors = require('cors');
-// port
-const PORT = 4040 || process.env.PORT;
-// routes 
+var express = require('express')
+var cors = require('cors')
+var app = express()
 const articleRoutes = require('./api/routes');
+const PORT = 4040 || process.env.PORT;
 
-// cors 
-app.use(cors());
-
+// app.use(cors());
 // use the article routes
 app.use('/articles', articleRoutes);
 
 
 
 // start server
-app.listen(PORT, () => console.log(`personal Blog is running on port $PORT`));
+app.listen(PORT, () => console.log(`personal Blog is running on port ${PORT}`));
